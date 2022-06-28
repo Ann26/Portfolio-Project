@@ -1,5 +1,6 @@
 -- Combine Two Tables
-
+## hello
+``` sql
 select p.firstName,
         p.lastName,
         a.city,
@@ -90,3 +91,4 @@ join (select stock_name, sum(price) as sell
  on b.stock_name = s.stock_name
               ;
           
+```
