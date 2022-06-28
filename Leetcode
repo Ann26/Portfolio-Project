@@ -73,3 +73,20 @@ in(
         where abc.row_num in ('1','2','3')
         ) abc1
     )
+    ;
+    
+-- Capital Gain/Loss
+    
+ select b.stock_name,
+       (s.sell - b.buy) as capital_gain_loss
+from (select stock_name, sum(price) as buy
+      from stocks
+      where operation = 'buy'
+      group by stock_name) b
+join (select stock_name, sum(price) as sell
+      from stocks
+      where operation = 'sell'
+      group by stock_name) s
+ on b.stock_name = s.stock_name
+              ;
+          
