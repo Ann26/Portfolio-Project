@@ -1,0 +1,9 @@
+SELECT user_id,
+       old_partner,
+       partner_name,
+       created_at
+FROM fact_glx_account
+WHERE 1=1
+    AND platform_name = 'SmartTV'
+    AND active_record = TRUE
+    AND created_at >= '2021-01-01'
