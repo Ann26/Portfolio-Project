@@ -10,7 +10,6 @@ on p.personID = a.personID
 ;
 
 -- Find Customer Referee
-
 select name
 from customer
 where referee_id is null
